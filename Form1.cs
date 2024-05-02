@@ -2,14 +2,15 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
         private SqlConnection sqlConnection;
-        private string defaultUsernamePlaceholder = "Username";
-        private string defaultPasswordPlaceholder = "Password";
+        private string defaultUsernamePlaceholder = "User1";
+        private string defaultPasswordPlaceholder = "Pass123!";
 
         public Form1()
         {
@@ -100,6 +101,14 @@ namespace WindowsFormsApp1
                 // Successful login
                 MessageBox.Show("Login successful!");
                 // Proceed to next form or action
+                // Create an instance of Form2
+                Form3 form3 = new Form3();
+
+                // Show Form2
+                form3.Show();
+
+                // Hide Form1
+                this.Hide();
             }
             else
             {
@@ -111,28 +120,25 @@ namespace WindowsFormsApp1
         private bool CheckCredentials(string username, string password)
         {
             bool isValid = false;
-            try
+            string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
+            string query = "SELECT COUNT(*) FROM Users WHERE username = @Username AND Password = @Password";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Encrypt=True;TrustServerCertificate=true;");
-                SqlDataAdapter sda = new SqlDataAdapter("SELECT COUNT(*) FROM [User] WHERE username = '" + username + "' AND password = '" + password + "'", sqlConnection);
-                DataTable dt = new DataTable();
-                sda.Fill(dt);
-                int count = Convert.ToInt32(dt.Rows[0][0]);
-                if (count > 0)
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                       isValid = true;
+                    command.Parameters.AddWithValue("@Username", username);
+                    command.Parameters.AddWithValue("@Password", password);
+
+                    connection.Open();
+                    int count = (int)command.ExecuteScalar();
+                    isValid = count > 0;
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            finally
-            {
-                sqlConnection.Close();
-            }
+
             return isValid;
         }
+
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {

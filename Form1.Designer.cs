@@ -67,9 +67,10 @@
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Location = new System.Drawing.Point(400, 0);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel1.Location = new System.Drawing.Point(398, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(386, 560);
+            this.panel1.Size = new System.Drawing.Size(386, 561);
             this.panel1.TabIndex = 1;
             // 
             // checkBox1
@@ -122,7 +123,7 @@
             this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, ((System.Drawing.FontStyle)(((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic) 
                 | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(260, 400);
+            this.label3.Location = new System.Drawing.Point(275, 400);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(68, 23);
             this.label3.TabIndex = 3;
@@ -143,13 +144,13 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Elephant", 36F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(110, 30);
+            this.label1.Location = new System.Drawing.Point(40, 35);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(158, 59);
+            this.label1.Size = new System.Drawing.Size(300, 62);
             this.label1.TabIndex = 1;
-            this.label1.Text = "KHAPA";
+            this.label1.Text = "KHAAPA";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form1
@@ -175,12 +176,12 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }
 

@@ -8,6 +8,9 @@ namespace WindowsFormsApp1
     public partial class Form1 : Form
     {
         private SqlConnection sqlConnection;
+        private string defaultUsernamePlaceholder = "Username";
+        private string defaultPasswordPlaceholder = "Password";
+
         public Form1()
         {
             InitializeComponent();
@@ -15,7 +18,53 @@ namespace WindowsFormsApp1
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // Set placeholder text for username and password
+            textBox1.Text = defaultUsernamePlaceholder;
+            textBox2.Text = defaultPasswordPlaceholder;
 
+            // Add click event handlers to clear text boxes
+            textBox1.Click += TextBox1_Click;
+            textBox2.Click += TextBox2_Click;
+
+            // Add leave event handlers to show placeholder text if empty
+            textBox1.Leave += TextBox1_Leave;
+            textBox2.Leave += TextBox2_Leave;
+        }
+
+        private void TextBox1_Click(object sender, EventArgs e)
+        {
+            // Clear placeholder text when username box is clicked
+            if (textBox1.Text == defaultUsernamePlaceholder)
+            {
+                textBox1.Text = "";
+            }
+        }
+
+        private void TextBox1_Leave(object sender, EventArgs e)
+        {
+            // Show placeholder text if username box is empty
+            if (string.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                textBox1.Text = defaultUsernamePlaceholder;
+            }
+        }
+
+        private void TextBox2_Leave(object sender, EventArgs e)
+        {
+            // Show placeholder text if password box is empty
+            if (string.IsNullOrWhiteSpace(textBox2.Text))
+            {
+                textBox2.Text = defaultPasswordPlaceholder;
+            }
+        }
+
+        private void TextBox2_Click(object sender, EventArgs e)
+        {
+            // Clear placeholder text when password box is clicked
+            if (textBox2.Text == defaultPasswordPlaceholder)
+            {
+                textBox2.Text = "";
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)

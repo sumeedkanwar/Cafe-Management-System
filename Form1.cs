@@ -119,7 +119,7 @@ namespace WindowsFormsApp1
         private bool CheckCredentials(string username, string password)
         {
             bool isValid = false;
-            string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
+            string connectionString = "Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;";
             string query = "SELECT COUNT(*) FROM Users WHERE username = @Username AND Password = @Password";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -170,6 +170,11 @@ namespace WindowsFormsApp1
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

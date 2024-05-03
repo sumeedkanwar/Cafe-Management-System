@@ -278,7 +278,7 @@ namespace WindowsFormsApp1
                             command.Parameters.AddWithValue("@itemId", itemId);
                             command.Parameters.AddWithValue("@quantity", quantity);
                             command.Parameters.AddWithValue("@totalPrice", totalPrice);
-                            command.ExecuteNonQuery(); // Error
+                            command.ExecuteNonQuery();
                         }
                     }
                 }

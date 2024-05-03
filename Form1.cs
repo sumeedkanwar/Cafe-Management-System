@@ -8,8 +8,8 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        private string defaultUsernamePlaceholder = "User1";
-        private string defaultPasswordPlaceholder = "Pass123!";
+        private string defaultUsernamePlaceholder = "user10";
+        private string defaultPasswordPlaceholder = "Password$10";
 
         public Form1()
         {
@@ -33,7 +33,6 @@ namespace WindowsFormsApp1
 
         private void TextBox1_Click(object sender, EventArgs e)
         {
-            // Clear placeholder text when username box is clicked
             if (textBox1.Text == defaultUsernamePlaceholder)
             {
                 textBox1.Text = "";
@@ -42,7 +41,6 @@ namespace WindowsFormsApp1
 
         private void TextBox1_Leave(object sender, EventArgs e)
         {
-            // Show placeholder text if username box is empty
             if (string.IsNullOrWhiteSpace(textBox1.Text))
             {
                 textBox1.Text = defaultUsernamePlaceholder;
@@ -51,7 +49,6 @@ namespace WindowsFormsApp1
 
         private void TextBox2_Leave(object sender, EventArgs e)
         {
-            // Show placeholder text if password box is empty
             if (string.IsNullOrWhiteSpace(textBox2.Text))
             {
                 textBox2.Text = defaultPasswordPlaceholder;
@@ -60,7 +57,6 @@ namespace WindowsFormsApp1
 
         private void TextBox2_Click(object sender, EventArgs e)
         {
-            // Clear placeholder text when password box is clicked
             if (textBox2.Text == defaultPasswordPlaceholder)
             {
                 textBox2.Text = "";
@@ -74,13 +70,10 @@ namespace WindowsFormsApp1
 
         private void label3_Click(object sender, EventArgs e)
         {
-            // Create an instance of Form2
             Form2 form2 = new Form2();
 
-            // Show Form2
             form2.Show();
 
-            // Hide Form1
             this.Hide();
         }
 
@@ -94,33 +87,46 @@ namespace WindowsFormsApp1
             string username = textBox1.Text;
             string password = textBox2.Text;
 
-            // Check if the username and password match in the user table
-            if (CheckCredentials(username, password))
+            if (CheckCredentials(username, password) == "staff")
             {
-                // Successful login
                 MessageBox.Show("Login successful!");
 
-                // Create an instance of Form2
+                Form3 form3 = new Form3(username);
+                form3.Show();
+                this.Hide();
+            }
+            else if (CheckCredentials(username, password) == "admin")
+            {
+                MessageBox.Show("Login successful!");
+
                 Form3 form3 = new Form3(username);
 
-                // Show Form3
                 form3.Show();
 
-                // Hide Form1
+                this.Hide();
+            }
+            else if (CheckCredentials(username, password) == "user")
+            {
+                MessageBox.Show("Login successful!");
+
+                Form3 form3 = new Form3(username);
+
+                form3.Show();
+
                 this.Hide();
             }
             else
             {
-                // Invalid credentials
                 MessageBox.Show("Invalid username or password. Please try again.");
             }
+
         }
 
-        private bool CheckCredentials(string username, string password)
+        private string CheckCredentials(string username, string password)
         {
-            bool isValid = false;
+            string type = "";
             string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
-            string query = "SELECT COUNT(*) FROM Users WHERE username = @Username AND Password = @Password";
+            string query = "SELECT user_type FROM Users WHERE username = @Username AND Password = @Password";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -130,12 +136,12 @@ namespace WindowsFormsApp1
                     command.Parameters.AddWithValue("@Password", password);
 
                     connection.Open();
-                    int count = (int)command.ExecuteScalar();
-                    isValid = count > 0;
+                    type = (string)command.ExecuteScalar();
+                    connection.Close();
                 }
             }
 
-            return isValid;
+            return type;
         }
 
 

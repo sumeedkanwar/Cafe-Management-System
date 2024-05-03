@@ -13,7 +13,6 @@ namespace WindowsFormsApp1
 {
     public partial class Form2 : Form
     {
-        private SqlConnection sqlConnection;
         private string defaultUsernamePlaceholder = "Username";
         private string defaultPasswordPlaceholder = "Password";
         private string defaultFullNamePlaceholder = "Full Name";

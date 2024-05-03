@@ -8,7 +8,6 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        private SqlConnection sqlConnection;
         private string defaultUsernamePlaceholder = "User1";
         private string defaultPasswordPlaceholder = "Pass123!";
 
@@ -100,11 +99,11 @@ namespace WindowsFormsApp1
             {
                 // Successful login
                 MessageBox.Show("Login successful!");
-                // Proceed to next form or action
-                // Create an instance of Form2
-                Form3 form3 = new Form3();
 
-                // Show Form2
+                // Create an instance of Form2
+                Form3 form3 = new Form3(username);
+
+                // Show Form3
                 form3.Show();
 
                 // Hide Form1
@@ -151,6 +150,26 @@ namespace WindowsFormsApp1
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            textBox2.UseSystemPasswordChar = !textBox2.UseSystemPasswordChar;
+
+            // Change icon based on password visibility
+            if (textBox2.UseSystemPasswordChar)
+            {
+                pictureBox1.Image = Properties.Resources.eye_hidden;
+            }
+            else
+            {
+                pictureBox1.Image = Properties.Resources.eye_visible;
+            }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

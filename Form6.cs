@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,6 +18,7 @@ namespace WindowsFormsApp1
         private string defaultUsernamePlaceholder = "Username";
         private string defaultOldPasswordPlaceholder = "Old Password";
         private string defaultNewPasswordPlaceholder = "New Password";
+        private SqlConnection connection;
         public Form6(string username)
         {
             InitializeComponent();
@@ -47,24 +49,6 @@ namespace WindowsFormsApp1
             form5.Show();
 
             this.Close(); // Hide Form3
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text == defaultOldPasswordPlaceholder || textBox2.Text == defaultNewPasswordPlaceholder || textBox3.Text == defaultNewPasswordPlaceholder)
-            {
-                MessageBox.Show("Please fill in all fields.");
-                return;
-            }
-
-            if (textBox2.Text != textBox3.Text)
-            {
-                MessageBox.Show("New passwords do not match.");
-                return;
-            }
-
-            // Update password in database
-            MessageBox.Show("Password updated successfully.");
         }
 
         private void TextBox1_Click(object sender, EventArgs e)
@@ -126,5 +110,55 @@ namespace WindowsFormsApp1
                 textBox3.Text = defaultNewPasswordPlaceholder;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (textBox1.Text == defaultOldPasswordPlaceholder || textBox2.Text == defaultNewPasswordPlaceholder || textBox3.Text == defaultNewPasswordPlaceholder)
+            {
+                MessageBox.Show("Please fill in all fields.");
+                return;
+            }
+
+            if (textBox2.Text != textBox3.Text)
+            {
+                MessageBox.Show("New passwords do not match.");
+                return;
+            }
+
+            try
+            {
+                using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+                {
+                    connection.Open(); // Open the connection
+
+                    string updateQuery = "UPDATE Users SET password = @NewPassword WHERE username = @Username AND password = @OldPassword";
+
+                    using (SqlCommand cmd = new SqlCommand(updateQuery, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@NewPassword", textBox2.Text);
+                        cmd.Parameters.AddWithValue("@Username", username);
+                        cmd.Parameters.AddWithValue("@OldPassword", textBox1.Text);
+
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show("Password updated successfully.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect old password.");
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error updating password: " + ex.Message);
+                //print error
+                Console.WriteLine(ex.Message);
+            }
+        }
+
     }
 }

@@ -46,7 +46,9 @@ namespace WindowsFormsApp1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-
+            Change_Name changeName = new Change_Name(username);
+            changeName.Show();
+            this.Close();
         }
     }
 }

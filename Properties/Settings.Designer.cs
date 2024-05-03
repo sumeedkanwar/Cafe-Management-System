@@ -26,7 +26,7 @@ namespace WindowsFormsApp1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;Encrypt=True;" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;Encrypt=True;" +
             "TrustServerCertificate=True")]
         public string ProjectConnectionString {
             get {

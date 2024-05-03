@@ -125,7 +125,7 @@ namespace WindowsFormsApp1
         private string CheckCredentials(string username, string password)
         {
             string type = "";
-            string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
+            string connectionString = "Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;";
             string query = "SELECT user_type FROM Users WHERE username = @Username AND Password = @Password";
 
             using (SqlConnection connection = new SqlConnection(connectionString))

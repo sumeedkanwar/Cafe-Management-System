@@ -17,6 +17,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.username = username;
+            label1.Text = username;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -46,9 +47,14 @@ namespace WindowsFormsApp1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Change_Name changeName = new Change_Name(username);
-            changeName.Show();
+            Form11 form11 = new Form11(username);
+            form11.Show();
             this.Close();
+        }
+
+        private void Form5_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

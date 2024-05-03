@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             feedback = new DataTable();
@@ -56,6 +56,21 @@ namespace WindowsFormsApp1
 
             // Set the data source of the data grid view to the data table
             dataGridView1.DataSource = feedback;
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Form3 form3 = new Form3(username);
+
+            // Show Form4
+            form3.Show();
+
+            this.Close(); // Hide Form3
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

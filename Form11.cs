@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Change_Name : Form
+    public partial class Form11 : Form
     {
         private string username;
         private string defaultUsernamePlaceholder;
         private SqlConnection connection;
-        public Change_Name(string username)
+        public Form11(string username)
         {
             InitializeComponent();
             this.username = username;
@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
         private string getFullName()
         {
             string fullName = "";
-            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT fullname FROM Users WHERE username = @Username", connection))
                 {
@@ -74,7 +74,7 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("UPDATE Users SET fullname = @FullName WHERE username = @Username", connection))
                 {

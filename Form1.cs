@@ -92,26 +92,27 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Login successful!");
 
                 Form3 form3 = new Form3(username);
+
                 form3.Show();
+
                 this.Hide();
+                
             }
             else if (CheckCredentials(username, password) == "admin")
             {
                 MessageBox.Show("Login successful!");
 
-                Form3 form3 = new Form3(username);
-
-                form3.Show();
-
+                Form10 form10 = new Form10(username);
+                form10.Show();
                 this.Hide();
             }
             else if (CheckCredentials(username, password) == "user")
             {
                 MessageBox.Show("Login successful!");
 
-                Form3 form3 = new Form3(username);
+                Form7 form7 = new Form7(username);
 
-                form3.Show();
+                form7.Show();
 
                 this.Hide();
             }
@@ -125,7 +126,7 @@ namespace WindowsFormsApp1
         private string CheckCredentials(string username, string password)
         {
             string type = "";
-            string connectionString = "Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;";
+            string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
             string query = "SELECT user_type FROM Users WHERE username = @Username AND Password = @Password";
 
             using (SqlConnection connection = new SqlConnection(connectionString))

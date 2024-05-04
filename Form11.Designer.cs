@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Change_Name
+    partial class Form11
     {
         /// <summary>
         /// Required designer variable.

@@ -265,7 +265,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(812, 520);
             this.dataGridView1.TabIndex = 22;
             // 
-            // Form11
+            // Feedbacks
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -273,8 +273,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form11";
-            this.Text = "Form11";
+            this.Name = "Feedbacks";
+            this.Text = "Change_Name";
+            this.Load += new System.EventHandler(this.Feedbacks_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

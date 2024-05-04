@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Feedbacks : Form
+    public partial class Customer_Feedback : Form
     {
-        public Feedbacks()
+        public Customer_Feedback()
         {
             InitializeComponent();
         }
 
-        private void Feedbacks_Load(object sender, EventArgs e)
+        private void Customer_Feedback_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }

@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Feedbacks : Form
+    public partial class Suppliers : Form
     {
-        public Feedbacks()
+        public Suppliers()
         {
             InitializeComponent();
-        }
-
-        private void Feedbacks_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

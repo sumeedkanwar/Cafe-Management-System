@@ -60,12 +60,12 @@ namespace WindowsFormsApp1
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3(username);
+            Staff_Dashboard Staff_Dashboard = new Staff_Dashboard(username);
 
             // Show Staff_Feedback
-            form3.Show();
+            Staff_Dashboard.Show();
 
-            this.Close(); // Hide Form3
+            this.Close(); // Hide Staff_Dashboard
         }
 
         private void label2_Click(object sender, EventArgs e)

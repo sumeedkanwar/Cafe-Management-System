@@ -185,9 +185,9 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form10 form10 = new Form10(username);
+            Orders Orders = new Orders(username);
 
-            form10.Show();
+            Orders.Show();
 
             this.Close();
         }

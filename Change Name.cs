@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form11 : Form
+    public partial class Change_Name : Form
     {
         private string username;
         private string defaultUsernamePlaceholder;
         private SqlConnection connection;
-        public Form11(string username)
+        public Change_Name(string username)
         {
             InitializeComponent();
             this.username = username;
@@ -86,6 +86,11 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Name changed successfully.");
                 }
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

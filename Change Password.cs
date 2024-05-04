@@ -48,7 +48,7 @@ namespace WindowsFormsApp1
             // Show Staff_Feedback
             form5.Show();
 
-            this.Close(); // Hide Form3
+            this.Close(); // Hide Staff_Dashboard
         }
 
         private void TextBox1_Click(object sender, EventArgs e)
@@ -160,5 +160,14 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

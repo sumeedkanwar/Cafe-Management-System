@@ -91,9 +91,9 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Login successful!");
 
-                Form3 form3 = new Form3(username);
+                Staff_Dashboard Staff_Dashboard = new Staff_Dashboard(username);
 
-                form3.Show();
+                Staff_Dashboard.Show();
 
                 this.Hide();
                 
@@ -102,8 +102,8 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Login successful!");
 
-                Form10 form10 = new Form10(username);
-                form10.Show();
+                Orders Orders = new Orders(username);
+                Orders.Show();
                 this.Hide();
             }
             else if (CheckCredentials(username, password) == "user")

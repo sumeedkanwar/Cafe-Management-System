@@ -13,14 +13,14 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form3 : Form
+    public partial class Staff_Dashboard : Form
     {
         private string username;
         private SqlConnection sqlConnection;
         private DataTable selectedItemsTable;
         private DataTable itemsTable;
 
-        public Form3(string username)
+        public Staff_Dashboard(string username)
         {
             InitializeComponent();
             InitializeSelectedItemsTable();
@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
             dataGridView1.DataSource = itemsTable;
         }
 
-        private void Form3_Load(object sender, EventArgs e)
+        private void Staff_Dashboard_Load(object sender, EventArgs e)
         {
             LoadItemsFromDatabase();
         }

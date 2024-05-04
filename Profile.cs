@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.username = username;
-            label1.Text = username;
+            //label1.Text = username;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -32,23 +32,23 @@ namespace WindowsFormsApp1
             // Show Staff_Feedback
             Change_Password.Show();
 
-            this.Close(); // Hide Form3
+            this.Close(); // Hide Staff_Dashboard
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            Form3 form3 = new Form3(username);
+            Staff_Dashboard Staff_Dashboard = new Staff_Dashboard(username);
 
             // Show Staff_Feedback
-            form3.Show();
+            Staff_Dashboard.Show();
 
-            this.Close(); // Hide Form3
+            this.Close(); // Hide Staff_Dashboard
         }
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form11 form11 = new Form11(username);
-            form11.Show();
+            Change_Name Change_Name = new Change_Name(username);
+            Change_Name.Show();
             this.Close();
         }
 

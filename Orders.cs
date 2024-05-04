@@ -12,12 +12,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form10 : Form
+    public partial class Orders : Form
     {
         private string username;
         private SqlConnection sqlConnection;
         private DataTable orders;
-        public Form10(string username)
+        public Orders(string username)
         {
             InitializeComponent();
             LoadItemsFromDatabase();
@@ -92,6 +92,11 @@ namespace WindowsFormsApp1
             form1.Show();
 
             this.Close();
+        }
+
+        private void Orders_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

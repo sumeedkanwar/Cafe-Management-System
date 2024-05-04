@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             orders = new DataTable();
@@ -55,7 +55,7 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form9 form9 = new Form9(username);
+            Staff form9 = new Staff(username);
 
             form9.Show();
 
@@ -64,7 +64,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form8 form8 = new Form8(username);
+            Inventory form8 = new Inventory(username);
 
             form8.Show();
 
@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Login form1 = new Login();
 
             form1.Show();
 

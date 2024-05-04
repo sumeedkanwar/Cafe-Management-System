@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form5 : Form
+    public partial class Profile : Form
     {
         private string username;
-        public Form5(string username)
+        public Profile(string username)
         {
             InitializeComponent();
             this.username = username;
@@ -27,10 +27,10 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form6 form6 = new Form6(username);
+            Change_Password Change_Password = new Change_Password(username);
 
-            // Show Form4
-            form6.Show();
+            // Show Staff_Feedback
+            Change_Password.Show();
 
             this.Close(); // Hide Form3
         }
@@ -39,7 +39,7 @@ namespace WindowsFormsApp1
         {
             Form3 form3 = new Form3(username);
 
-            // Show Form4
+            // Show Staff_Feedback
             form3.Show();
 
             this.Close(); // Hide Form3

@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form9
+    partial class Staff
     {
         /// <summary>
         /// Required designer variable.

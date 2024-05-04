@@ -6,12 +6,12 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         private string defaultUsernamePlaceholder = "user10";
         private string defaultPasswordPlaceholder = "Password$10";
 
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
 
         private void label3_Click(object sender, EventArgs e)
         {
-            Form2 form2 = new Form2();
+            Signup form2 = new Signup();
 
             form2.Show();
 
@@ -110,9 +110,9 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show("Login successful!");
 
-                Form7 form7 = new Form7(username);
+                Customer_Dashboard Customer_Dashboard = new Customer_Dashboard(username);
 
-                form7.Show();
+                Customer_Dashboard.Show();
 
                 this.Hide();
             }
@@ -126,7 +126,7 @@ namespace WindowsFormsApp1
         private string CheckCredentials(string username, string password)
         {
             string type = "";
-            string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
+            string connectionString = "Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;";
             string query = "SELECT user_type FROM Users WHERE username = @Username AND Password = @Password";
 
             using (SqlConnection connection = new SqlConnection(connectionString))

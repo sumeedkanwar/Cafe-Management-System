@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form2 : Form
+    public partial class Signup : Form
     {
         private string defaultUsernamePlaceholder = "Username";
         private string defaultPasswordPlaceholder = "Password";
         private string defaultFullNamePlaceholder = "Full Name";
-        public Form2()
+        public Signup()
         {
             InitializeComponent();
         }
@@ -83,7 +83,7 @@ namespace WindowsFormsApp1
         private void label3_Click(object sender, EventArgs e)
         {
             // Create an instance of Form1
-            Form1 form1 = new Form1();
+            Login form1 = new Login();
 
             // Show Form1
             form1.Show();
@@ -151,7 +151,7 @@ namespace WindowsFormsApp1
 
             // Create the SQL query to insert the user into the database
             string insertQuery = "INSERT INTO Users (username, password, fullname, user_type) VALUES (@Username, @Password, @FullName, 0)";
-            string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
+            string connectionString = "Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

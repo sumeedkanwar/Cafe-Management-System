@@ -287,6 +287,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "Shipments";
             this.Text = "New Shipment";
+            this.Load += new System.EventHandler(this.Shipments_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

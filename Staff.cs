@@ -11,12 +11,12 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form9 : Form
+    public partial class Staff : Form
     {
         private SqlConnection sqlConnection;
         private DataTable staff;
         private string username;
-        public Form9(string username)
+        public Staff(string username)
         {
             InitializeComponent();
             this.username = username;
@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             staff = new DataTable();
@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
         private void DeleteStaff(int staffId)
         {
             // Create a new SQL connection
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 // Create a SQL command to delete the staff member
                 using (SqlCommand command = new SqlCommand("DELETE FROM Staff WHERE staff_id = @StaffId", connection))
@@ -144,7 +144,7 @@ namespace WindowsFormsApp1
         private void EditStaff(int staffId, string newSkillLevel)
         {
             // Create a new SQL connection
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 // Create a SQL command to update the staff information
                 using (SqlCommand command = new SqlCommand("UPDATE Staff SET skill_level = @NewSkillLevel WHERE staff_id = @StaffId", connection))
@@ -194,7 +194,7 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form8 form8 = new Form8(username);
+            Inventory form8 = new Inventory(username);
 
             form8.Show();
 
@@ -203,7 +203,7 @@ namespace WindowsFormsApp1
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Login form1 = new Login();
 
             form1.Show();
 

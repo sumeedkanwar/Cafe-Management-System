@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form8 : Form
+    public partial class Inventory : Form
     {
         private SqlConnection sqlConnection;
         private DataTable inventory;
         private string username;
 
-        public Form8(string username)
+        public Inventory(string username)
         {
             this.username = username;
             InitializeComponent();
@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             inventory = new DataTable();
@@ -110,7 +110,7 @@ namespace WindowsFormsApp1
                 int shipmentId;
 
                 // Create a new SQL connection
-                using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+                using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
                 {
                     // Open the connection
                     connection.Open();
@@ -179,7 +179,7 @@ namespace WindowsFormsApp1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form9 form9 = new Form9(username);
+            Staff form9 = new Staff(username);
 
             form9.Show();
 
@@ -197,11 +197,16 @@ namespace WindowsFormsApp1
 
         private void button9_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
+            Login form1 = new Login();
 
             form1.Show();
 
             this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -16,5 +16,10 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
         }
+
+        private void Shipments_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

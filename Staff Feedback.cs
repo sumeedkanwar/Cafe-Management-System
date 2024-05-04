@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form4 : Form
+    public partial class Staff_Feedback : Form
     {
         private SqlConnection sqlConnection;
         private DataTable feedback;
         private string username;
 
-        public Form4(string username)
+        public Staff_Feedback(string username)
         {
             InitializeComponent();
             LoadItemsFromDatabase();
@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             feedback = new DataTable();
@@ -62,13 +62,23 @@ namespace WindowsFormsApp1
         {
             Form3 form3 = new Form3(username);
 
-            // Show Form4
+            // Show Staff_Feedback
             form3.Show();
 
             this.Close(); // Hide Form3
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Staff_Feedback_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
         }

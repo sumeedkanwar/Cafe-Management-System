@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form9
+    partial class Feedbacks
     {
         /// <summary>
         /// Required designer variable.
@@ -42,8 +42,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +65,7 @@
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(157, 690);
-            this.panel1.TabIndex = 18;
+            this.panel1.TabIndex = 21;
             // 
             // label1
             // 
@@ -245,9 +243,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display", 14F);
             this.label2.Location = new System.Drawing.Point(193, 47);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 30);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Staff";
+            this.label2.Size = new System.Drawing.Size(115, 30);
+            this.label2.TabIndex = 23;
+            this.label2.Text = "Feedbacks";
             // 
             // dataGridView1
             // 
@@ -265,40 +263,18 @@
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(812, 520);
-            this.dataGridView1.TabIndex = 19;
+            this.dataGridView1.TabIndex = 22;
             // 
-            // button12
-            // 
-            this.button12.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.button12.Location = new System.Drawing.Point(729, 45);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(147, 32);
-            this.button12.TabIndex = 26;
-            this.button12.Text = "Show Top Staff Member";
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.button11.Location = new System.Drawing.Point(882, 45);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(128, 32);
-            this.button11.TabIndex = 25;
-            this.button11.Text = "Update Skills";
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // Form9
+            // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1045, 690);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "Form9";
-            this.Text = "Form9";
+            this.Name = "Form11";
+            this.Text = "Form11";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -323,7 +299,5 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
     }
 }

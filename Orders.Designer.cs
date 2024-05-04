@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApp1
 {
-    partial class Form10
+    partial class Orders
     {
         /// <summary>
         /// Required designer variable.
@@ -262,7 +262,7 @@
             this.dataGridView1.RowHeadersWidth = 48;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(812, 449);
+            this.dataGridView1.Size = new System.Drawing.Size(812, 520);
             this.dataGridView1.TabIndex = 19;
             // 
             // Form10

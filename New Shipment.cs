@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class Form8 : Form
+    public partial class New_Shipment : Form
     {
-        public Form8()
+        public New_Shipment()
         {
             InitializeComponent();
         }
 
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void New_Shipment_Load(object sender, EventArgs e)
         {
 
         }
@@ -32,17 +27,7 @@ namespace WindowsFormsApp1
 
         }
 
-        private void Form8_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button12_Click(object sender, EventArgs e)
+        private void domainUpDown1_SelectedItemChanged(object sender, EventArgs e)
         {
 
         }

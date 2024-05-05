@@ -86,6 +86,7 @@ namespace WindowsFormsApp1
                         command.ExecuteNonQuery();
                     }
                 }
+                MessageBox.Show("Order has been delivered");
                 LoadItemsFromDatabase();
             }
         }

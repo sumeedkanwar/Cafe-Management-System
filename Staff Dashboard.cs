@@ -211,32 +211,25 @@ namespace WindowsFormsApp1
                     return;
                 }
 
-                int customerId;
-                bool isValidCustomerId = false;
-                do
-                {
-                    string input = Microsoft.VisualBasic.Interaction.InputBox("Enter customer ID:", "Customer ID", "");
-                    if (string.IsNullOrWhiteSpace(input))
-                    {
-                        return; // Exit if the input is empty
-                    }
+                int? customerId = null; // Nullable customerId
 
-                    if (int.TryParse(input, out customerId)) // Try parsing the input as an integer
-                    {
-                        // Check if the customer ID exists in the database
-                        isValidCustomerId = checkCustomerId(customerId);
-                        if (!isValidCustomerId)
-                        {
-                            MessageBox.Show("Customer ID does not exist. Please enter a valid ID.", "Invalid Customer ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                    }
-                    else
+                string input = Microsoft.VisualBasic.Interaction.InputBox("Enter customer ID (leave empty to skip):", "Customer ID", "");
+                if (!string.IsNullOrWhiteSpace(input))
+                {
+                    if (!int.TryParse(input, out int tempCustomerId))
                     {
                         MessageBox.Show("Invalid input. Please enter a valid integer for Customer ID.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
                     }
-                } while (!isValidCustomerId);
+                    customerId = tempCustomerId;
 
-
+                    // Check if the customer ID exists in the database
+                    if (!checkCustomerId(customerId.Value))
+                    {
+                        MessageBox.Show("Customer ID does not exist. Please enter a valid ID.", "Invalid Customer ID", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        return;
+                    }
+                }
 
                 // Get the current date and time
                 DateTime orderDate = DateTime.Now;
@@ -254,14 +247,14 @@ namespace WindowsFormsApp1
                     using (SqlCommand command = new SqlCommand("INSERT INTO Orders (order_id, customer_id, order_date, staff_id, total, status) VALUES (@orderId, @customerId, @orderDate, @staffId, @totalBill, 'pending')", connection))
                     {
                         command.Parameters.AddWithValue("@orderId", orderId);
-                        command.Parameters.AddWithValue("@customerId", customerId);
+                        command.Parameters.AddWithValue("@customerId", (object)customerId ?? DBNull.Value); // Handle null customerId
                         command.Parameters.AddWithValue("@orderDate", orderDate);
                         command.Parameters.AddWithValue("@staffId", staffId);
                         command.Parameters.AddWithValue("@totalBill", totalBill);
                         command.ExecuteNonQuery();
                     }
                 }
-                
+
 
                 // Insert order items into Order_Items table
                 foreach (DataRow row in selectedItemsTable.Rows)
@@ -287,6 +280,7 @@ namespace WindowsFormsApp1
                 // Clear selected items table and update total bill label
                 selectedItemsTable.Clear();
                 UpdateTotalBillLabel();
+                getOrderId();
 
                 // Inform the user that the checkout was successful
                 MessageBox.Show("Checkout successful! Order ID: " + orderId);
@@ -297,6 +291,8 @@ namespace WindowsFormsApp1
                 MessageBox.Show("No items selected for checkout.");
             }
         }
+
+
 
         private void label2_Click(object sender, EventArgs e)
         {

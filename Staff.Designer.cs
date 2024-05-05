@@ -41,7 +41,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -249,21 +248,10 @@
             this.dataGridView1.TabIndex = 19;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // button11
-            // 
-            this.button11.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.button11.Location = new System.Drawing.Point(670, 459);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(85, 29);
-            this.button11.TabIndex = 21;
-            this.button11.Text = "Remove";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
             // button12
             // 
             this.button12.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.button12.Location = new System.Drawing.Point(567, 459);
+            this.button12.Location = new System.Drawing.Point(672, 460);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(85, 29);
             this.button12.TabIndex = 22;
@@ -289,11 +277,10 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.button12);
-            this.Controls.Add(this.button11);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Staff";
             this.Text = "Form9";
             this.Load += new System.EventHandler(this.Staff_Load);
@@ -320,7 +307,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button12;
         private System.Windows.Forms.Button button13;
     }

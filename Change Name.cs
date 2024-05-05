@@ -86,6 +86,7 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Name changed successfully.");
                 }
             }
+            defaultUsernamePlaceholder = textBox1.Text;
         }
 
         private void label1_Click(object sender, EventArgs e)

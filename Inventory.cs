@@ -82,25 +82,37 @@ namespace WindowsFormsApp1
 
         private void button11_Click(object sender, EventArgs e)
         {
-            string item_id = Microsoft.VisualBasic.Interaction.InputBox("Enter Item Id", "Remove Expired Ites", "0", 0, 0);
+            string item_id = Microsoft.VisualBasic.Interaction.InputBox("Enter Item Id", "Remove Expired Items", "0", 0, 0);
             if (doesItemExist(Convert.ToInt32(item_id)))
             {
                 int quantity = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("Enter Quantity to Discard", "Remove Expired Item", "0", 0, 0));
-                if (quantity > 0)
+                if (quantity > 0) // Check if quantity is positive
                 {
-                    using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
+                    int currentQuantity = GetCurrentQuantity(Convert.ToInt32(item_id));
+                    if (currentQuantity >= quantity) // Check if quantity to discard is not greater than current quantity
                     {
-                        using (SqlCommand command = new SqlCommand("UPDATE Stock SET quantity = quantity - @quantity WHERE item_id = @item_id", connection))
+                        using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
                         {
-                            connection.Open();
-                            command.Parameters.AddWithValue("@item_id", item_id);
-                            command.Parameters.AddWithValue("@quantity", quantity);
-                            command.ExecuteNonQuery();
-                            connection.Close();
+                            using (SqlCommand command = new SqlCommand("UPDATE Stock SET quantity = quantity - @quantity WHERE item_id = @item_id", connection))
+                            {
+                                connection.Open();
+                                command.Parameters.AddWithValue("@item_id", item_id);
+                                command.Parameters.AddWithValue("@quantity", quantity);
+                                command.ExecuteNonQuery();
+                                connection.Close();
+                            }
                         }
+                        MessageBox.Show("Item discarded successfully");
+                        LoadItemsFromDatabase();
                     }
-                    MessageBox.Show("Item discarded successfully");
-                    LoadItemsFromDatabase();
+                    else
+                    {
+                        MessageBox.Show("Quantity to discard exceeds current quantity");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Quantity must be greater than 0");
                 }
             }
             else
@@ -108,6 +120,20 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Item does not exist");
             }
         }
+
+        private int GetCurrentQuantity(int itemId)
+        {
+            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            {
+                using (SqlCommand command = new SqlCommand("SELECT quantity FROM Stock WHERE item_id = @itemId", connection))
+                {
+                    connection.Open();
+                    command.Parameters.AddWithValue("@itemId", itemId);
+                    return (int)command.ExecuteScalar();
+                }
+            }
+        }
+
 
         private bool doesItemExist(int itemId)
         {
@@ -178,11 +204,33 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        private void button10_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
-            Profile profile = new Profile(username);
-            profile.Show();
-            this.Close();
+            string item_id = Microsoft.VisualBasic.Interaction.InputBox("Enter Item Id", "Delete Item", "0", 0, 0);
+            if (doesItemExist(Convert.ToInt32(item_id)))
+            {
+                DialogResult result = MessageBox.Show("Are you sure you want to delete this item?", "Confirm Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+                    {
+                        using (SqlCommand command = new SqlCommand("DELETE FROM Stock WHERE item_id = @item_id", connection))
+                        {
+                            connection.Open();
+                            command.Parameters.AddWithValue("@item_id", item_id);
+                            command.ExecuteNonQuery();
+                            connection.Close();
+                        }
+                    }
+                    MessageBox.Show("Item deleted successfully");
+                    LoadItemsFromDatabase();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Item does not exist");
+            }
         }
+
     }
 }

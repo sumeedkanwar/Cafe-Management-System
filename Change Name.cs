@@ -20,13 +20,12 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.username = username;
-            this.defaultUsernamePlaceholder = getFullName();
         }
         
         private string getFullName()
         {
             string fullName = "";
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT fullname FROM Users WHERE username = @Username", connection))
                 {

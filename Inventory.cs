@@ -85,6 +85,9 @@ namespace WindowsFormsApp1
 
         private void button11_Click(object sender, EventArgs e)
         {
+            New_Shipment new_Shipment = new New_Shipment(username);
+            new_Shipment.Show();
+            this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -121,10 +124,10 @@ namespace WindowsFormsApp1
             this.Close();
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
-            Feedbacks Feedbacks = new Feedbacks(username);
-            Feedbacks.Show();
+            Customers customers = new Customers(username);
+            customers.Show();
             this.Close();
         }
     }

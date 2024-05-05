@@ -238,8 +238,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display", 14F);
-            this.label2.Location = new System.Drawing.Point(145, 38);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(180, 47);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(100, 26);
             this.label2.TabIndex = 23;
@@ -253,7 +252,8 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(148, 75);
+            this.dataGridView1.Location = new System.Drawing.Point(185, 92);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 48;

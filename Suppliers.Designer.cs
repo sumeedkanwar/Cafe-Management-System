@@ -42,9 +42,10 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.button2.Location = new System.Drawing.Point(500, 470);
+            this.button2.Location = new System.Drawing.Point(801, 41);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(137, 28);
+            this.button2.Size = new System.Drawing.Size(193, 38);
             this.button2.TabIndex = 26;
             this.button2.Text = "Add New Suppplier";
             this.button2.UseVisualStyleBackColor = true;
@@ -54,10 +55,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display", 14F);
-            this.label2.Location = new System.Drawing.Point(86, 40);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(115, 49);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 26);
+            this.label2.Size = new System.Drawing.Size(102, 30);
             this.label2.TabIndex = 25;
             this.label2.Text = "Suppliers";
             // 
@@ -67,12 +67,13 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(89, 73);
+            this.dataGridView1.Location = new System.Drawing.Point(119, 90);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 48;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(656, 379);
+            this.dataGridView1.Size = new System.Drawing.Size(875, 466);
             this.dataGridView1.TabIndex = 24;
             // 
             // panel1
@@ -80,26 +81,29 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(62, 561);
+            this.panel1.Size = new System.Drawing.Size(83, 690);
             this.panel1.TabIndex = 23;
             // 
             // pictureBox2
             // 
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.pictureBox2.Image = global::WindowsFormsApp1.Properties.Resources.back;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 21);
+            this.pictureBox2.Location = new System.Drawing.Point(4, 26);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox2.Size = new System.Drawing.Size(64, 59);
             this.pictureBox2.TabIndex = 4;
             this.pictureBox2.TabStop = false;
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
-            this.button1.Location = new System.Drawing.Point(650, 470);
+            this.button1.Location = new System.Drawing.Point(867, 578);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 28);
+            this.button1.Size = new System.Drawing.Size(127, 37);
             this.button1.TabIndex = 27;
             this.button1.Text = "Remove";
             this.button1.UseVisualStyleBackColor = true;
@@ -107,15 +111,15 @@
             // 
             // Suppliers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(1045, 690);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Suppliers";
             this.Text = "Suppliers";
             this.Load += new System.EventHandler(this.Suppliers_Load);

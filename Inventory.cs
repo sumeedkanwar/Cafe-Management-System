@@ -33,7 +33,7 @@ namespace WindowsFormsApp1
             inventory = new DataTable();
 
             // Create a new SQL command
-            using (SqlCommand sqlCommand = new SqlCommand("SELECT stock_id as [Stock Id], item_id as [Item Id], quantity as Quantity FROM Stock", sqlConnection))
+            using (SqlCommand sqlCommand = new SqlCommand("SELECT S.stock_id AS [Stock ID],I.item_id AS [Item ID],I.item_name AS Name,I.price AS Price,S.quantity AS Quantity FROM Stock S INNER JOIN Items I ON S.item_id = I.item_id;", sqlConnection))
             {
                 // Open the SQL connection
                 sqlConnection.Open();

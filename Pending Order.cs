@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             orders = new DataTable();
@@ -76,7 +76,7 @@ namespace WindowsFormsApp1
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 int orderId = (int)dataGridView1.SelectedRows[0].Cells[0].Value;
-                using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
+                using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
                 {
                     using (SqlCommand command = new SqlCommand("UPDATE Orders SET status = 'delivered', staff_id = @StaffId WHERE order_id = @OrderId", connection))
                     {
@@ -93,7 +93,7 @@ namespace WindowsFormsApp1
 
         private int getStaffId(string username)
         {
-            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT staff_id FROM Staff WHERE username = @Username", connection))
                 {

@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Initialize the connection string
-            string connectionString = "Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;";
+            string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
 
             // Create a new SQL connection with the initialized connection string
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -70,7 +70,7 @@ namespace WindowsFormsApp1
 
         private int getCustomerId(string username)
         {
-            using (connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
+            using (connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT customer_id FROM Customers WHERE username = @Username", connection))
                 {
@@ -129,7 +129,7 @@ namespace WindowsFormsApp1
         private void UpdateFeedback(int orderId, string feedback, int rating)
         {
             // Initialize the connection string
-            string connectionString = "Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;";
+            string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
 
             // Create a new SQL connection with the initialized connection string
             using (SqlConnection connection = new SqlConnection(connectionString))

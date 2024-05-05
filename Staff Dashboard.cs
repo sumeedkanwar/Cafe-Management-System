@@ -38,7 +38,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             itemsTable = new DataTable();
@@ -165,7 +165,7 @@ namespace WindowsFormsApp1
                 throw new ArgumentNullException(nameof(username), "Username cannot be null or empty.");
             }
 
-            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT staff_id FROM Staff WHERE username = @Username", connection))
                 {
@@ -187,7 +187,7 @@ namespace WindowsFormsApp1
 
         private bool checkCustomerId(int customerId)
         {
-            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Customers WHERE customer_id = @CustomerId", connection))
                 {
@@ -241,7 +241,7 @@ namespace WindowsFormsApp1
                 orderId = Convert.ToInt32(label4.Text);
 
                 // Insert the order into the Orders table
-                using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
+                using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
                 {
                     connection.Open();
                     using (SqlCommand command = new SqlCommand("INSERT INTO Orders (order_id, customer_id, order_date, staff_id, total, status) VALUES (@orderId, @customerId, @orderDate, @staffId, @totalBill, 'delivered')", connection))
@@ -263,7 +263,7 @@ namespace WindowsFormsApp1
                     int quantity = Convert.ToInt32(row["Quantity"]);
                     decimal totalPrice = Convert.ToDecimal(row["TotalPrice"]);
 
-                    using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
+                    using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
                     {
                         connection.Open();
                         using (SqlCommand command = new SqlCommand("INSERT INTO Order_Items (order_id, item_id, quantity, total) VALUES (@orderId, @itemId, @quantity, @totalPrice)", connection))
@@ -307,7 +307,7 @@ namespace WindowsFormsApp1
         private void getOrderId()
         {
 
-            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT MAX(order_id) FROM Orders", connection))
                 {

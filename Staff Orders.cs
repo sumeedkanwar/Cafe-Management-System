@@ -28,7 +28,7 @@ namespace WindowsFormsApp1
         private int getStaffId(string username)
         {
             int staffId = -1;
-            string connectionString = "Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;";
+            string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 string query = "SELECT staff_id FROM Staff WHERE username = @username";
@@ -53,7 +53,7 @@ namespace WindowsFormsApp1
             int staffId = getStaffId(username);
 
             // Create a new SQL connection
-            string connectionString = "Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;";
+            string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
             using (sqlConnection = new SqlConnection(connectionString))
             {
                 string query = "SELECT O.order_id AS OrderID,O.order_date AS OrderDate, C.username AS [Customer Name], O.total AS Total,F.feedback AS Feedback FROM Orders O LEFT JOIN Customers C ON O.customer_id = C.customer_id LEFT JOIN Feedback F ON O.order_id = F.order_id WHERE O.staff_id = @staffId";

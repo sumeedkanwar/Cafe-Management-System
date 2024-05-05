@@ -35,5 +35,13 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            Customers form3 = new Customers(username);
+            form3.ShowDialog();
+            this.Close();
+
+        }
     }
 }

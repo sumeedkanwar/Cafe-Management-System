@@ -20,6 +20,7 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.username = username;
+            defaultUsernamePlaceholder = getFullName();
         }
         
         private string getFullName()

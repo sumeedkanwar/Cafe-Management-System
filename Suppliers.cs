@@ -168,5 +168,19 @@ namespace WindowsFormsApp1
             inventory.Show();
             this.Close();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile(username);
+            profile.Show();
+            this.Close();
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
+        }
     }
 }

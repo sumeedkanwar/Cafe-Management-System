@@ -232,5 +232,11 @@ namespace WindowsFormsApp1
             }
         }
 
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile(username);
+            profile.Show();
+            this.Close();
+        }
     }
 }

@@ -14,9 +14,11 @@ namespace WindowsFormsApp1
 {
     public partial class Customer_Trends : Form
     {
-        public Customer_Trends()
+        private string username;
+        public Customer_Trends(string username)
         {
             InitializeComponent();
+            this.username = username;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -27,6 +29,11 @@ namespace WindowsFormsApp1
         private void chart1_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void Customer_Trends_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

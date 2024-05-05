@@ -17,10 +17,13 @@ namespace WindowsFormsApp1
     {
         private SqlConnection sqlConnection;
         private DataTable supplier;
+        private readonly string username;
 
-        public Suppliers()
+        public Suppliers(string username)
         {
             InitializeComponent();
+            this.username = username;
+            LoadItemsFromDatabase();
         }
 
         private void Suppliers_Load(object sender, EventArgs e)
@@ -31,7 +34,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             supplier = new DataTable();
@@ -60,7 +63,7 @@ namespace WindowsFormsApp1
         private int getSupplierId()
         {
             int num = -1;
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT MAX(supplier_id) FROM Suppliers", connection))
                 {
@@ -116,6 +119,54 @@ namespace WindowsFormsApp1
 
                 LoadItemsFromDatabase();
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Shipments shipments = new Shipments(username);
+            shipments.Show();
+            this.Close();
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Feedbacks feedbacks = new Feedbacks(username);
+            feedbacks.Show();
+            this.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Orders orders = new Orders(username);
+            orders.Show();
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Customers customers = new Customers(username);
+            customers.Show();
+            this.Close();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Staff staff = new Staff(username);
+            staff.Show();
+            this.Close();
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            Inventory inventory = new Inventory(username);
+            inventory.Show();
+            this.Close();
         }
     }
 }

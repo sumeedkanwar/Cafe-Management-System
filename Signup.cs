@@ -151,7 +151,7 @@ namespace WindowsFormsApp1
 
             // Create the SQL query to insert the user into the database
             string insertQuery = "INSERT INTO Users (username, password, fullname, user_type) VALUES (@Username, @Password, @FullName, 0)";
-            string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
+            string connectionString = "Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {

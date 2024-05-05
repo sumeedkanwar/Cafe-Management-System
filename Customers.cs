@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             customers = new DataTable();
@@ -58,7 +58,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Customer_Trends customer_Trends = new Customer_Trends();
+            Customer_Trends customer_Trends = new Customer_Trends(username);
             customer_Trends.Show();
             this.Close();
         }
@@ -72,11 +72,52 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            Orders orders = new Orders(username);
+            orders.Show();
+            this.Close();
         }
 
         private void Customers_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliers = new Suppliers(username);
+            suppliers.Show();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Shipments shipments = new Shipments(username);
+            shipments.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Feedbacks feedbacks = new Feedbacks(username);
+            feedbacks.Show();
+            this.Close();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            Inventory inventory = new Inventory(username);
+            inventory.Show();
+            this.Close();
 
         }
     }

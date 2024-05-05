@@ -25,7 +25,7 @@ namespace WindowsFormsApp1
         private string getFullName()
         {
             string fullName = "";
-            using (connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT fullname FROM Users WHERE username = @Username", connection))
                 {
@@ -73,7 +73,7 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("UPDATE Users SET fullname = @FullName WHERE username = @Username", connection))
                 {

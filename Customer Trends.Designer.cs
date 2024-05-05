@@ -33,9 +33,9 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -63,6 +63,17 @@
             this.panel1.Size = new System.Drawing.Size(83, 690);
             this.panel1.TabIndex = 23;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox2.Image = global::WindowsFormsApp1.Properties.Resources.back;
+            this.pictureBox2.Location = new System.Drawing.Point(10, 26);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(64, 59);
+            this.pictureBox2.TabIndex = 4;
+            this.pictureBox2.TabStop = false;
+            // 
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
@@ -87,17 +98,6 @@
             this.comboBox1.Size = new System.Drawing.Size(197, 29);
             this.comboBox1.TabIndex = 27;
             this.comboBox1.Text = "By Week";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox2.Image = global::WindowsFormsApp1.Properties.Resources.back;
-            this.pictureBox2.Location = new System.Drawing.Point(10, 26);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(64, 59);
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
             // 
             // chart1
             // 
@@ -130,6 +130,7 @@
             this.Controls.Add(this.button2);
             this.Name = "Customer_Trends";
             this.Text = "Customer_Trends";
+            this.Load += new System.EventHandler(this.Customer_Trends_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();

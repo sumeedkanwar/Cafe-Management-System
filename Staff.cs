@@ -209,5 +209,10 @@ namespace WindowsFormsApp1
 
             this.Close();
         }
+
+        private void Staff_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

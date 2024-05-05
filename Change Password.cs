@@ -15,7 +15,6 @@ namespace WindowsFormsApp1
     public partial class Change_Password : Form
     {
         private string username;
-        private string defaultUsernamePlaceholder = "Username";
         private SqlConnection connection;
         public Change_Password(string username)
         {
@@ -66,7 +65,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+                using (connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
                 {
                     connection.Open(); // Open the connection
 

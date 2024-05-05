@@ -30,7 +30,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection using the existing sqlConnection object's connection string
-            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             customers = new DataTable();
@@ -108,7 +108,7 @@ namespace WindowsFormsApp1
             int customerId = getNextCustomerId();
 
             // Create a new SQL connection
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 // Create a new SQL command to insert the new staff member
                 using (SqlCommand command = new SqlCommand("INSERT INTO Users (username, password, fullname, user_type) VALUES (@Username, @Password, @Fullname, 'customer'); INSERT INTO Customers VALUES(@CustomerId, @Username);", connection))
@@ -135,7 +135,7 @@ namespace WindowsFormsApp1
         private bool IsUsernameExists(string username)
         {
             // Create a new SQL connection
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 // Create a SQL command to check if the username exists
                 using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Users WHERE username = @Username", connection))
@@ -165,7 +165,7 @@ namespace WindowsFormsApp1
 
         private int getNextCustomerId()
         {
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT MAX(customer_id) FROM Customers", connection))
                 {
@@ -214,12 +214,12 @@ namespace WindowsFormsApp1
 
                 int id = Convert.ToInt32(customers.Rows[selectedIndex]["Customer Id"]);
 
-                using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+                using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
                 {
-                    using (SqlCommand sqlCommand = new SqlCommand("DELETE FROM Customers WHERE customer_id = @id; DELETE FROM Users WHERE username = @username", connection))
+
+                    using (SqlCommand sqlCommand = new SqlCommand("DELETE FROM Customers WHERE customer_id = @id;", connection))
                     {
                         sqlCommand.Parameters.AddWithValue("@id", id);
-                        sqlCommand.Parameters.AddWithValue("@username", getUsername(id));
 
                         connection.Open();
                         sqlCommand.ExecuteNonQuery();

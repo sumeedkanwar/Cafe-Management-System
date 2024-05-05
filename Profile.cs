@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
 
         private void getTypes()
         {
-            using (connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT user_type FROM Users WHERE username = @Username", connection))
                 {

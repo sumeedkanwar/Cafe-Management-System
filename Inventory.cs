@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             inventory = new DataTable();
@@ -88,7 +88,7 @@ namespace WindowsFormsApp1
                 int quantity = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("Enter Quantity to Discard", "Remove Expired Item", "0", 0, 0));
                 if (quantity > 0)
                 {
-                    using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+                    using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
                     {
                         using (SqlCommand command = new SqlCommand("UPDATE Stock SET quantity = quantity - @quantity WHERE item_id = @item_id", connection))
                         {
@@ -111,7 +111,7 @@ namespace WindowsFormsApp1
 
         private bool doesItemExist(int itemId)
         {
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Stock WHERE item_id = @itemId", connection))
                 {

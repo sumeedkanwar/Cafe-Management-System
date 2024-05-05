@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
             // Validate input values
             if (ValidateInput())
             {
-                using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+                using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
                 {
                     connection.Open();
                     SqlTransaction transaction = connection.BeginTransaction();
@@ -116,7 +116,7 @@ namespace WindowsFormsApp1
         {
             int supplierId = 0;
 
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 connection.Open();
                 string sqlQuery = "SELECT supplier_id FROM Suppliers WHERE supplier_name = @SupplierName";
@@ -138,7 +138,7 @@ namespace WindowsFormsApp1
         {
             int itemId = 0;
 
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 connection.Open();
                 string sqlQuery = "SELECT item_id FROM Items WHERE item_name = @ItemName";
@@ -194,7 +194,7 @@ namespace WindowsFormsApp1
             comboBox2.Items.Clear();
 
             // Initialize connection
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 // Open connection
                 connection.Open();

@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
 
         private void GetCustomerDetails()
         {
-            using (sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand sqlCommand = new SqlCommand("SELECT c.username, u.fullname FROM Customers c JOIN Users u on u.username = c.username WHERE customer_id = @CustomerId", sqlConnection))
                 {
@@ -63,7 +63,7 @@ namespace WindowsFormsApp1
         {
             if(textBox1.Text == "" || textBox2.Text == "")
             {
-                using (sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+                using (sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
                 {
                     using (SqlCommand sqlCommand = new SqlCommand("UPDATE Users SET fullname = @FullName WHERE username = @username", sqlConnection))
                     {
@@ -85,7 +85,7 @@ namespace WindowsFormsApp1
             }
             else
             {
-                using (sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+                using (sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
                 {
                     using (SqlCommand sqlCommand = new SqlCommand("UPDATE Users SET fullname = @FullName, password = @Password WHERE username = @username", sqlConnection))
                     {

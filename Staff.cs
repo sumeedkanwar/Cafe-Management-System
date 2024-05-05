@@ -26,7 +26,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             staff = new DataTable();
@@ -87,7 +87,7 @@ namespace WindowsFormsApp1
         private void DeleteStaff(int staffId)
         {
             // Create a new SQL connection
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 // Create a SQL command to delete the staff member
                 using (SqlCommand command = new SqlCommand("DELETE FROM Staff WHERE staff_id = @StaffId", connection))
@@ -144,7 +144,7 @@ namespace WindowsFormsApp1
         private void EditStaff(int staffId, string newSkillLevel)
         {
             // Create a new SQL connection
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 // Create a SQL command to update the staff information
                 using (SqlCommand command = new SqlCommand("UPDATE Staff SET skill_level = @NewSkillLevel WHERE staff_id = @StaffId", connection))
@@ -282,7 +282,7 @@ namespace WindowsFormsApp1
         {
             int staffId = getNextStaffId();
             // Create a new SQL connection
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 // Create a SQL command to insert the new staff member
                 using (SqlCommand command = new SqlCommand("INSERT INTO Users (username, password, fullname, user_type) VALUES (@Username, @Password, @FullName, 'staff'); INSERT INTO Staff (staff_id, username, skill_level) VALUES (@StaffId, @Username, @SkillLevel)", connection))
@@ -327,7 +327,7 @@ namespace WindowsFormsApp1
         private bool IsUsernameExists(string username)
         {
             // Create a new SQL connection
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 // Create a SQL command to check if the username exists
                 using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Users WHERE username = @Username", connection))
@@ -357,7 +357,7 @@ namespace WindowsFormsApp1
 
         private int getNextStaffId()
         {
-            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT MAX(staff_id) FROM Staff", connection))
                 {

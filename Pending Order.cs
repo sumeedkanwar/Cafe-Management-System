@@ -12,9 +12,11 @@ namespace WindowsFormsApp1
 {
     public partial class Pending_Order : Form
     {
-        public Pending_Order()
+        private string username;
+        public Pending_Order(string username)
         {
             InitializeComponent();
+            this.username = username;
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -25,6 +27,13 @@ namespace WindowsFormsApp1
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            Customer_Dashboard form1 = new Customer_Dashboard(username);
+            form1.Show();
+            this.Hide();
         }
     }
 }

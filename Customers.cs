@@ -265,9 +265,18 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void button10_Click(object sender, EventArgs e)
         {
+            Profile profile = new Profile(username);
+            profile.Show();
+            this.Close();
+        }
 
+        private void button9_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
         }
     }
 }

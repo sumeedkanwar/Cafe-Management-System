@@ -16,8 +16,6 @@ namespace WindowsFormsApp1
     {
         private string username;
         private string defaultUsernamePlaceholder = "Username";
-        private string defaultOldPasswordPlaceholder = "Old Password";
-        private string defaultNewPasswordPlaceholder = "New Password";
         private SqlConnection connection;
         public Change_Password(string username)
         {
@@ -27,17 +25,6 @@ namespace WindowsFormsApp1
 
         private void Change_Password_Load(object sender, EventArgs e)
         {
-            textBox1.Text = defaultOldPasswordPlaceholder;
-            textBox2.Text = defaultNewPasswordPlaceholder;
-            textBox3.Text = defaultNewPasswordPlaceholder;
-
-            textBox1.Click += TextBox1_Click;
-            textBox2.Click += TextBox2_Click;
-            textBox3.Click += TextBox3_Click;
-
-            textBox1.Leave += textBox1_Leave;
-            textBox2.Leave += textBox2_Leave;
-            textBox3.Leave += textBox3_Leave;
 
         }
 
@@ -49,30 +36,6 @@ namespace WindowsFormsApp1
             form5.Show();
 
             this.Close(); // Hide Staff_Dashboard
-        }
-
-        private void TextBox1_Click(object sender, EventArgs e)
-        {
-            if (textBox1.Text == defaultOldPasswordPlaceholder)
-            {
-                textBox1.Text = "";
-            }
-        }
-
-        private void TextBox2_Click(object sender, EventArgs e)
-        {
-            if (textBox2.Text == defaultNewPasswordPlaceholder)
-            {
-                textBox2.Text = "";
-            }
-        }
-
-        private void TextBox3_Click(object sender, EventArgs e)
-        {
-            if (textBox3.Text == defaultNewPasswordPlaceholder)
-            {
-                textBox3.Text = "";
-            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -87,33 +50,9 @@ namespace WindowsFormsApp1
         {
         }
 
-        private void textBox1_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBox1.Text))
-            {
-                textBox1.Text = defaultOldPasswordPlaceholder;
-            }
-        }
-
-        private void textBox2_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                textBox2.Text = defaultNewPasswordPlaceholder;
-            }
-        }
-
-        private void textBox3_Leave(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(textBox3.Text))
-            {
-                textBox3.Text = defaultNewPasswordPlaceholder;
-            }
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == defaultOldPasswordPlaceholder || textBox2.Text == defaultNewPasswordPlaceholder || textBox3.Text == defaultNewPasswordPlaceholder)
+            if (textBox1.Text == "" || textBox2.Text == ""|| textBox3.Text == "")
             {
                 MessageBox.Show("Please fill in all fields.");
                 return;
@@ -127,7 +66,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                using (SqlConnection connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
+                using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
                 {
                     connection.Open(); // Open the connection
 

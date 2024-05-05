@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             orders = new DataTable();
@@ -97,6 +97,32 @@ namespace WindowsFormsApp1
         private void Orders_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            Suppliers suppliers = new Suppliers();
+            suppliers.Show();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Shipments shipments = new Shipments(username);
+            shipments.Show();
+            this.Close();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile(username);
+            profile.Show();
+            this.Close();
         }
     }
 }

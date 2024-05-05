@@ -20,7 +20,6 @@ namespace WindowsFormsApp1
         public Staff_Feedback(string username)
         {
             InitializeComponent();
-            LoadItemsFromDatabase();
             this.username = username;
         }
 
@@ -29,33 +28,62 @@ namespace WindowsFormsApp1
 
         }
 
+        private int getStaffId(string username)
+        {
+            int staffId = -1;
+            string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT staff_id FROM Staff WHERE username = @username";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@username", username);
+                    connection.Open();
+                    var result = command.ExecuteScalar();
+                    if (result != null)
+                    {
+                        staffId = Convert.ToInt32(result);
+                    }
+                }
+            }
+            return staffId;
+        }
+
+
+
         private void LoadItemsFromDatabase()
         {
-            // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
-
-            // Create a new data table to store the items
-            feedback = new DataTable();
-
-            // Create a new SQL command
-            using (SqlCommand sqlCommand = new SqlCommand("SELECT feedback_id as Id, rating as Rating, feedback as Feedback FROM Feedback", sqlConnection))
+            int staffId = getStaffId(username);
+            if (staffId == -1)
             {
-                // Open the SQL connection
-                sqlConnection.Open();
-
-                // Create a new SQL data adapter
-                using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand))
-                {
-                    // Fill the data table with the results of the SQL command
-                    sqlDataAdapter.Fill(feedback);
-                }
-
-                // Close the SQL connection
-                sqlConnection.Close();
+                MessageBox.Show("Staff ID not found.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
-            // Set the data source of the data grid view to the data table
-            dataGridView1.DataSource = feedback;
+            string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
+            using (sqlConnection = new SqlConnection(connectionString))
+            {
+                string query = "SELECT f.feedback_id as Id, f.rating as Rating, f.feedback as Feedback " +
+                               "FROM Feedback f " +
+                               "JOIN Orders o ON o.order_id = f.order_id " +
+                               "JOIN Staff s ON s.staff_id = o.staff_id " +
+                               "WHERE s.staff_id = @staffId;";
+
+                using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
+                {
+                    sqlCommand.Parameters.AddWithValue("@staffId", staffId);
+                    sqlConnection.Open();
+
+                    feedback = new DataTable();
+                    using (SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand))
+                    {
+                        sqlDataAdapter.Fill(feedback);
+                    }
+
+                    dataGridView1.DataSource = feedback;
+                }
+            }
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
@@ -75,7 +103,7 @@ namespace WindowsFormsApp1
 
         private void Staff_Feedback_Load(object sender, EventArgs e)
         {
-
+            LoadItemsFromDatabase();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)

@@ -293,5 +293,26 @@ namespace WindowsFormsApp1
             form1.Show();
             this.Close();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile(username);
+            profile.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Login login = new Login();
+            login.Show();
+            this.Close();
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            Customer_Feedback customer_Feedback = new Customer_Feedback(username);
+            customer_Feedback.Show();
+            this.Close();
+        }
     }
 }

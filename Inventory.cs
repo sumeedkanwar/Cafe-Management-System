@@ -110,7 +110,8 @@ namespace WindowsFormsApp1
         }
 
         private bool doesItemExist(int itemId)
-        {             using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+        {
+            using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
             {
                 using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Stock WHERE item_id = @itemId", connection))
                 {

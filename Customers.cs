@@ -278,5 +278,10 @@ namespace WindowsFormsApp1
             login.Show();
             this.Close();
         }
+        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

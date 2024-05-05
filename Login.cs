@@ -8,8 +8,8 @@ namespace WindowsFormsApp1
 {
     public partial class Login : Form
     {
-        private string defaultUsernamePlaceholder = "user1";
-        private string defaultPasswordPlaceholder = "Password$1";
+        private string defaultUsernamePlaceholder = "user3";
+        private string defaultPasswordPlaceholder = "Password$3";
 
         public Login()
         {

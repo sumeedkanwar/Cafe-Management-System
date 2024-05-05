@@ -320,15 +320,6 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void pictureBox7_Click(object sender, EventArgs e)
-        {
-            Staff_Feedback Staff_Feedback = new Staff_Feedback(username);
-
-            Staff_Feedback.Show();
-
-            this.Close();
-        }
-
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             Profile form5 = new Profile(username);
@@ -367,27 +358,49 @@ namespace WindowsFormsApp1
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void button12_Click(object sender, EventArgs e)
         {
             Pending_Order Pending_Order = new Pending_Order(username);
             Pending_Order.Show();
             this.Close();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void button8_Click(object sender, EventArgs e)
         {
-            Staff_Orders staff_Orders = new Staff_Orders(username);
-            staff_Orders.Show();
+            Staff_Feedback Staff_Feedback = new Staff_Feedback(username);
+
+            Staff_Feedback.Show();
+
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Staff_Orders Staff_Orders = new Staff_Orders(username);
+            Staff_Orders.Show();
+            this.Close();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Login form1 = new Login();
+
+            form1.Show();
+
+            this.Close();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Profile form5 = new Profile(username);
+
+            form5.Show();
+
             this.Close();
         }
     }

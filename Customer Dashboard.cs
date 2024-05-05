@@ -286,5 +286,12 @@ namespace WindowsFormsApp1
             form6.Show();
             this.Close();
         }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            Login form1 = new Login();
+            form1.Show();
+            this.Close();
+        }
     }
 }

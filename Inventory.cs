@@ -53,10 +53,7 @@ namespace WindowsFormsApp1
             dataGridView1.DataSource = inventory;
         }
 
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -142,6 +139,13 @@ namespace WindowsFormsApp1
         {
             Suppliers suppliers = new Suppliers(username);
             suppliers.Show();
+            this.Close();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Profile profile = new Profile(username);
+            profile.Show();
             this.Close();
         }
     }

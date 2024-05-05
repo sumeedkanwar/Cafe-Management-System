@@ -376,5 +376,19 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Pending_Order Pending_Order = new Pending_Order(username);
+            Pending_Order.Show();
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            Staff_Orders staff_Orders = new Staff_Orders(username);
+            staff_Orders.Show();
+            this.Close();
+        }
     }
 }

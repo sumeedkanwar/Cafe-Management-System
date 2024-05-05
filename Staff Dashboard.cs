@@ -244,7 +244,7 @@ namespace WindowsFormsApp1
                 using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
                 {
                     connection.Open();
-                    using (SqlCommand command = new SqlCommand("INSERT INTO Orders (order_id, customer_id, order_date, staff_id, total, status) VALUES (@orderId, @customerId, @orderDate, @staffId, @totalBill, 'pending')", connection))
+                    using (SqlCommand command = new SqlCommand("INSERT INTO Orders (order_id, customer_id, order_date, staff_id, total, status) VALUES (@orderId, @customerId, @orderDate, @staffId, @totalBill, 'delivered')", connection))
                     {
                         command.Parameters.AddWithValue("@orderId", orderId);
                         command.Parameters.AddWithValue("@customerId", (object)customerId ?? DBNull.Value); // Handle null customerId

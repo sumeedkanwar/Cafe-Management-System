@@ -56,7 +56,7 @@ namespace WindowsFormsApp1
             string connectionString = "Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;";
             using (sqlConnection = new SqlConnection(connectionString))
             {
-                string query = "SELECT O.order_id AS OrderID,O.order_date AS OrderDate, C.username AS [Customer Name], O.total AS Total,F.feedback AS Feedback FROM Orders O JOIN Customers C ON O.customer_id = C.customer_id LEFT JOIN Feedback F ON O.order_id = F.order_id WHERE O.staff_id = @staffId";
+                string query = "SELECT O.order_id AS OrderID,O.order_date AS OrderDate, C.username AS [Customer Name], O.total AS Total,F.feedback AS Feedback FROM Orders O LEFT JOIN Customers C ON O.customer_id = C.customer_id LEFT JOIN Feedback F ON O.order_id = F.order_id WHERE O.staff_id = @staffId";
                 using (SqlCommand sqlCommand = new SqlCommand(query, sqlConnection))
                 {
                     sqlCommand.Parameters.AddWithValue("@staffId", staffId);

@@ -279,5 +279,12 @@ namespace WindowsFormsApp1
         {
 
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            Customer_Feedback form6 = new Customer_Feedback(username);
+            form6.Show();
+            this.Close();
+        }
     }
 }

@@ -8,8 +8,8 @@ namespace WindowsFormsApp1
 {
     public partial class Login : Form
     {
-        private string defaultUsernamePlaceholder = "user10";
-        private string defaultPasswordPlaceholder = "Password$10";
+        private string defaultUsernamePlaceholder = "user1";
+        private string defaultPasswordPlaceholder = "Password$1";
 
         public Login()
         {
@@ -87,7 +87,9 @@ namespace WindowsFormsApp1
             string username = textBox1.Text;
             string password = textBox2.Text;
 
-            if (CheckCredentials(username, password) == "staff")
+            string type = CheckCredentials(username, password);
+
+            if (type == "staff")
             {
                 MessageBox.Show("Login successful!");
 
@@ -98,7 +100,7 @@ namespace WindowsFormsApp1
                 this.Hide();
                 
             }
-            else if (CheckCredentials(username, password) == "admin")
+            else if (type == "admin")
             {
                 MessageBox.Show("Login successful!");
 
@@ -106,7 +108,7 @@ namespace WindowsFormsApp1
                 Orders.Show();
                 this.Hide();
             }
-            else if (CheckCredentials(username, password) == "user")
+            else if (type == "customer")
             {
                 MessageBox.Show("Login successful!");
 

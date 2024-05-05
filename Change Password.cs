@@ -65,7 +65,7 @@ namespace WindowsFormsApp1
 
             try
             {
-                using (connection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;"))
+                using (connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
                 {
                     connection.Open(); // Open the connection
 

@@ -27,7 +27,7 @@ namespace WindowsFormsApp1
         private void LoadItemsFromDatabase()
         {
             // Create a new SQL connection
-            sqlConnection = new SqlConnection("Data Source=DESKTOP-HFACQ64;Initial Catalog=Project;Integrated Security=True;");
+            sqlConnection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;");
 
             // Create a new data table to store the items
             inventory = new DataTable();
@@ -85,9 +85,44 @@ namespace WindowsFormsApp1
 
         private void button11_Click(object sender, EventArgs e)
         {
-            New_Shipment new_Shipment = new New_Shipment(username);
-            new_Shipment.Show();
-            this.Close();
+            string item_id = Microsoft.VisualBasic.Interaction.InputBox("Enter Item Id", "Remove Expired Ites", "0", 0, 0);
+            if (doesItemExist(Convert.ToInt32(item_id)))
+            {
+                int quantity = Convert.ToInt32(Microsoft.VisualBasic.Interaction.InputBox("Enter Quantity to Discard", "Remove Expired Item", "0", 0, 0));
+                if (quantity > 0)
+                {
+                    using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+                    {
+                        using (SqlCommand command = new SqlCommand("UPDATE Stock SET quantity = quantity - @quantity WHERE item_id = @item_id", connection))
+                        {
+                            connection.Open();
+                            command.Parameters.AddWithValue("@item_id", item_id);
+                            command.Parameters.AddWithValue("@quantity", quantity);
+                            command.ExecuteNonQuery();
+                            connection.Close();
+                        }
+                    }
+                    MessageBox.Show("Item discarded successfully");
+                    LoadItemsFromDatabase();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Item does not exist");
+            }
+        }
+
+        private bool doesItemExist(int itemId)
+        {             using (SqlConnection connection = new SqlConnection("Data Source=SUMEED;Initial Catalog=Project;Integrated Security=True;"))
+            {
+                using (SqlCommand command = new SqlCommand("SELECT COUNT(*) FROM Stock WHERE item_id = @itemId", connection))
+                {
+                    connection.Open();
+                    command.Parameters.AddWithValue("@itemId", itemId);
+                    int count = (int)command.ExecuteScalar();
+                    return count > 0;
+                }
+            }
         }
 
         private void button3_Click(object sender, EventArgs e)

@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Change Customer Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Change Customer Details.Designer.cs">
+      <DependentUpon>Change Customer Details.cs</DependentUpon>
+    </Compile>
     <Compile Include="Change Name.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     <Compile Include="Suppliers.Designer.cs">
       <DependentUpon>Suppliers.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Change Customer Details.resx">
+      <DependentUpon>Change Customer Details.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Change Name.resx">
       <DependentUpon>Change Name.cs</DependentUpon>
     </EmbeddedResource>

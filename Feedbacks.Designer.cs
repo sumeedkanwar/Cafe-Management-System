@@ -62,18 +62,18 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(157, 690);
+            this.panel1.Size = new System.Drawing.Size(118, 561);
             this.panel1.TabIndex = 21;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Variable Display", 14F);
-            this.label1.Location = new System.Drawing.Point(19, 9);
+            this.label1.Location = new System.Drawing.Point(14, 7);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(119, 30);
+            this.label1.Size = new System.Drawing.Size(103, 26);
             this.label1.TabIndex = 17;
             this.label1.Text = "Dashboard";
             // 
@@ -85,13 +85,13 @@
             this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button10.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 10.19469F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button10.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button10.Location = new System.Drawing.Point(0, 598);
-            this.button10.Margin = new System.Windows.Forms.Padding(4);
+            this.button10.Location = new System.Drawing.Point(0, 486);
             this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(157, 47);
+            this.button10.Size = new System.Drawing.Size(118, 38);
             this.button10.TabIndex = 27;
             this.button10.Text = "Profile";
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -101,13 +101,13 @@
             this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button9.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 10.19469F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button9.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button9.Location = new System.Drawing.Point(0, 643);
-            this.button9.Margin = new System.Windows.Forms.Padding(4);
+            this.button9.Location = new System.Drawing.Point(0, 522);
             this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(157, 47);
+            this.button9.Size = new System.Drawing.Size(118, 38);
             this.button9.TabIndex = 26;
             this.button9.Text = "Logout";
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button6
             // 
@@ -117,10 +117,9 @@
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 10.19469F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button6.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button6.Location = new System.Drawing.Point(0, 366);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Location = new System.Drawing.Point(0, 297);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(157, 47);
+            this.button6.Size = new System.Drawing.Size(118, 38);
             this.button6.TabIndex = 25;
             this.button6.Text = "Feedbacks";
             this.button6.UseVisualStyleBackColor = false;
@@ -133,10 +132,9 @@
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 10.19469F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button7.Location = new System.Drawing.Point(0, 320);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
+            this.button7.Location = new System.Drawing.Point(0, 260);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(157, 47);
+            this.button7.Size = new System.Drawing.Size(118, 38);
             this.button7.TabIndex = 24;
             this.button7.Text = "Feedbacks";
             this.button7.UseVisualStyleBackColor = false;
@@ -149,10 +147,9 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 10.19469F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button8.Location = new System.Drawing.Point(0, 136);
-            this.button8.Margin = new System.Windows.Forms.Padding(4);
+            this.button8.Location = new System.Drawing.Point(0, 110);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(157, 47);
+            this.button8.Size = new System.Drawing.Size(118, 38);
             this.button8.TabIndex = 23;
             this.button8.Text = "Customers";
             this.button8.UseVisualStyleBackColor = false;
@@ -165,13 +162,13 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 10.19469F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button5.Location = new System.Drawing.Point(0, 274);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
+            this.button5.Location = new System.Drawing.Point(0, 223);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(157, 47);
+            this.button5.Size = new System.Drawing.Size(118, 38);
             this.button5.TabIndex = 22;
             this.button5.Text = "Shipments";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -181,13 +178,13 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 10.19469F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button4.Location = new System.Drawing.Point(0, 228);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
+            this.button4.Location = new System.Drawing.Point(0, 185);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(157, 47);
+            this.button4.Size = new System.Drawing.Size(118, 38);
             this.button4.TabIndex = 21;
             this.button4.Text = "Feedbacks";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -197,13 +194,13 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 10.19469F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button3.Location = new System.Drawing.Point(0, 92);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(0, 75);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(157, 47);
+            this.button3.Size = new System.Drawing.Size(118, 38);
             this.button3.TabIndex = 20;
             this.button3.Text = "Staff";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
@@ -213,13 +210,13 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 10.19469F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button2.Location = new System.Drawing.Point(0, 182);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(0, 148);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(157, 47);
+            this.button2.Size = new System.Drawing.Size(118, 38);
             this.button2.TabIndex = 19;
             this.button2.Text = "Orders";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -229,21 +226,22 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Variable Small Semibol", 10.19469F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.button1.Location = new System.Drawing.Point(0, 47);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(0, 38);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(157, 47);
+            this.button1.Size = new System.Drawing.Size(118, 38);
             this.button1.TabIndex = 18;
             this.button1.Text = "Inventory";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI Variable Display", 14F);
-            this.label2.Location = new System.Drawing.Point(193, 47);
+            this.label2.Location = new System.Drawing.Point(145, 38);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(115, 30);
+            this.label2.Size = new System.Drawing.Size(100, 26);
             this.label2.TabIndex = 23;
             this.label2.Text = "Feedbacks";
             // 
@@ -255,24 +253,24 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(198, 92);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
+            this.dataGridView1.Location = new System.Drawing.Point(148, 75);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 48;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(812, 520);
+            this.dataGridView1.Size = new System.Drawing.Size(609, 422);
             this.dataGridView1.TabIndex = 22;
             // 
             // Feedbacks
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1045, 690);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Feedbacks";
             this.Text = "Change_Name";
             this.Load += new System.EventHandler(this.Feedbacks_Load);

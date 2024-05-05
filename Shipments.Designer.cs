@@ -182,6 +182,7 @@
             this.button4.TabIndex = 21;
             this.button4.Text = "Feedbacks";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -261,7 +262,7 @@
             // 
             this.button11.Font = new System.Drawing.Font("Segoe UI Variable Display", 10F);
             this.button11.Location = new System.Drawing.Point(650, 37);
-            this.button11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button11.Margin = new System.Windows.Forms.Padding(2);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(108, 26);
             this.button11.TabIndex = 25;
@@ -278,7 +279,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Shipments";
             this.Text = "New Shipment";
             this.Load += new System.EventHandler(this.Shipments_Load);

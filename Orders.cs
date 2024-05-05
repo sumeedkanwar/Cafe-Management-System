@@ -124,5 +124,12 @@ namespace WindowsFormsApp1
             profile.Show();
             this.Close();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Feedbacks feedbacks = new Feedbacks(username);
+            feedbacks.Show();
+            this.Close();
+        }
     }
 }
